@@ -3,14 +3,22 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Sorter from "./Sorter";
 import NumbersCollection from "./NumbersCollection";
+import CharactersCollection from "./CharactersCollection";
 
 const numbersCollection =
     new NumbersCollection([11, -3, -11, 3, 1, -1, -2, 2]);
-const sorter =
+const charactersCollection =
+    new CharactersCollection('ZxYnmba')
+const numbersSorter =
     new Sorter(numbersCollection)
+const charactersSorter =
+    new Sorter(charactersCollection);
 
-sorter.sort();
-console.log(sorter.collection)
+numbersSorter.sort();
+charactersSorter.sort();
+
+console.log('Numbers Sorter: ', numbersCollection.data)
+console.log('Characters Sorter: ', charactersCollection.data)
 
 ReactDOM.render(
   <React.StrictMode>
